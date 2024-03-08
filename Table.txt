@@ -1,0 +1,29 @@
+Product |Master|
+	ID(int AI)[primary]	1		    2
+	Nama(str)		    Nasi goreng	Teh manis
+	Harga(int)		    10000		8000
+	Kategori(str)		Makanan		Minuman
+Stock |Master|
+	ID(int AI)[primary]	1	 2	   3
+	Nama(str)		    Nasi Kecap Gula
+	Jumlah(int) 		3	 5	   10
+	Satuan(str)		    kg	 l	   kg
+Productbahan |Junction| - Relasi:Product&Stock
+	Produk(int)[foreign] 1(Nasi goreng)	1(Nasi goreng) 2(Teh manis)
+	Bahan(int)[foreign]	 1(Nasi)		2(Kecap)	   3(Gula)
+	Jumlah(double) 		 0,01			0,002		   0,01
+	Satuan(str)			 kg				l			   kg
+Reportbeli |Transaction| - Relasi:All
+	ID(int AI)[primary]	1
+	Harga(int)			20000
+	Nama(str)			Gula
+	Jumlah(int)			10
+	Satuan(str)			kg
+	Timestamp
+Reportjual |Transaction| - Relasi:All
+	ID(int AI)[primary]	1			2
+	Harga(int)			10000		16000
+	Nama(str)			Nasi goreng Teh manis
+	Jumlah(int)			1			2
+	Satuan(str)			piring		gelas
+	Timestamp
